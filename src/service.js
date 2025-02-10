@@ -24,7 +24,8 @@ export default {
   // פונקציה להוספת משימה חדשה
   addTask: async (name) => {
     try {
-      const result = await apiClient.post(`/items`, { name ,isComplete:false});
+      const result = await axios.post('https://authserver-m253.onrender.com/items', { name ,isComplete:false})
+
       console.log('addTask', result.data);
       return result.data;
     } catch (error) {
@@ -36,7 +37,7 @@ export default {
   // פונקציה לעדכון סטטוס משימה
   setCompleted: async (id, isComplete) => {
     try {
-      const result = await apiClient.put(`/items/${id}?updatedItem=${isComplete}`);
+      const result = await  axios.put(`https://authserver-m253.onrender.com/items/${id}?updatedItem=${isComplete}`)
       console.log('setCompleted', { id, isComplete });
       return result.data;
     } catch (error) {
@@ -47,7 +48,7 @@ export default {
   // פונקציה למחיקת משימה לפי מזהה
   deleteTask: async (id) => {
     try {
-      await apiClient.delete(`/items/${id}`);
+      await  axios.delete(`https://authserver-m253.onrender.com/items/${id}`)
       console.log('deleteTask', id);
       return {};
     } catch (error) {
