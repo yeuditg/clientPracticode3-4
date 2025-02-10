@@ -1,8 +1,7 @@
 
 import axios from 'axios';
 
-const apiUrl = "https://localhost:5150";
-
+const apiUrl = process.env.REACT_APP_API;
 
 export default {
   // פונקציה לקבלת כל המשימות
