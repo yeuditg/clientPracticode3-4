@@ -2,7 +2,7 @@
 import axios from 'axios';
 //תודה ל
 const apiUrl = process.env.REACT_APP_API;
-
+console.log(apiUrl);
 export default {
   // פונקציה לקבלת כל המשימות
   getTasks: async () => {
