@@ -12,7 +12,7 @@ export default {
   // פונקציה לקבלת כל המשימות
   getTasks: async () => {
     try {
-    await apiClient.get(`/items`); // 
+    const result=await apiClient.get(`/items`); // 
       return result.data;
     } catch (error) {
       console.error('Error in getTasks:', error.message);
