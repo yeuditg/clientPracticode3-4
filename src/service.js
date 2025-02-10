@@ -12,13 +12,15 @@ export default {
   // פונקציה לקבלת כל המשימות
   getTasks: async () => {
     try {
-    const result=await apiClient.get(`/items`); // 
+    const result=await axios.get('https://authserver-m253.onrender.com/items'); 
       return result.data;
     } catch (error) {
       console.error('Error in getTasks:', error.message);
       return [];
     }
   },
+
+
   // פונקציה להוספת משימה חדשה
   addTask: async (name) => {
     try {
